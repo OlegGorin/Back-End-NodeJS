@@ -13,10 +13,10 @@ const server = http.createServer((request, response) => {
     if (userName) {
       response.statusCode = 200;
       response.statusMessage = "OK";
-      response.header = "Content-Type: text/plain";
+      response.header = "Content-Type: text/plain, application/json";
       response.end(`Hello, ${userName}`);
     } else {
-      response.statusCode = 200;
+      response.statusCode = 400;
       response.header = "Content-Type: text/plain";
       response.end("Enter a name");
     }
